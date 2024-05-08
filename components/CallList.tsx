@@ -6,7 +6,8 @@ import Loader from './Loader';
 import MeetingCard from './MeetingCard';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useGetCalls } from '@/hooks/UseGetCalls';
+import { useGetCalls } from '../hooks/UseGetCalls';
+
 
 const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
   const router = useRouter();
