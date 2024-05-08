@@ -25,10 +25,11 @@ const MeetingSetup = ({
 
   const call = useCall();
 
-  if (call === undefined) {
-    throw new Error("useStreamCall must be used within a StreamCall component.");
+  if (!call) {
+    throw new Error(
+      'useStreamCall must be used within a StreamCall component.',
+    );
   }
-  
 
   // https://getstream.io/video/docs/react/ui-cookbook/replacing-call-controls/
   const [isMicCamToggled, setIsMicCamToggled] = useState(false);
@@ -62,7 +63,7 @@ const MeetingSetup = ({
     <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white">
       <h1 className="text-center text-2xl font-bold">Setup</h1>
       <VideoPreview />
-      <div className="flex h-16 items-center justify-center gap-3 " >
+      <div className="flex h-16 items-center justify-center gap-3">
         <label className="flex items-center justify-center gap-2 font-medium">
           <input
             type="checkbox"
